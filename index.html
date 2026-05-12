@@ -8,6 +8,76 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="shazma-gaffoor.css">
+    <style>
+        /* === Header layout & typography overrides ===
+           Self-contained adjustments to balance the 3-column header,
+           restore contact label/value structure, and unify bio typography.
+           Designed to migrate cleanly into shazma-gaffoor.css later. */
+
+        .portfolio-header .header-content {
+            grid-template-columns: 280px minmax(0, 1fr) 240px;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        /* "Contact" heading: eyebrow style, no longer competing with the H1 */
+        .contact-details-column h3 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-weight: 600;
+            opacity: 0.55;
+            margin: 0 0 1.5rem 0;
+        }
+
+        /* Restore the broken label/value vertical structure */
+        .contact-details-column .contact-info-item {
+            display: block;
+            margin-bottom: 1.25rem;
+        }
+        .contact-details-column .contact-info-item:last-child {
+            margin-bottom: 0;
+        }
+        .contact-details-column .contact-info-label {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.55;
+            margin-bottom: 0.25rem;
+            font-weight: 500;
+        }
+        .contact-details-column .contact-info-value {
+            display: block;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* The previously-orphaned bio paragraph, now visually a continuation of the italic intro */
+        .bio-extended {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem 1.5rem 0;
+        }
+        .bio-extended-paragraph {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        /* Mobile: stack the header columns */
+        @media (max-width: 768px) {
+            .portfolio-header .header-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                align-items: stretch;
+            }
+            .bio-extended-paragraph {
+                font-size: 1.125rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="grain-overlay"></div>
@@ -28,7 +98,7 @@
                 <div class="contact-section">
                     <h1 class="name">Shazma Gaffoor</h1>
                     <p class="title">Journalist</p>
-                    <p class="specialisation-tagline">Social Justice | Health Policy | Cultural Identity</p>
+                    <p class="specialisation-tagline">Social Justice · Health Policy · Cultural Identity</p>
                     
                     <div class="contact-buttons-row">
                         <a href="https://linkedin.com/in/shazmagaffoor" target="_blank" rel="noopener noreferrer" class="linkedin-button">
@@ -116,8 +186,8 @@
         </header>
 
         <!-- Extended bio paragraph (full width, was previously column-constrained) -->
-        <div class="bio-extended" style="max-width: 1200px; margin: 0 auto; padding: 2.5rem 1.5rem 0;">
-            <p style="font-family: 'Cormorant Garamond', 'Source Serif 4', serif; font-size: 1.0625rem; line-height: 1.7; margin: 0;">
+        <div class="bio-extended">
+            <p class="bio-extended-paragraph">
                 From writing to health research features for La Trobe University, to producing vox pop interviews in Melbourne’s bustling CBD for Channel 10’s 'The Project', she brings broadcast experience from national networks, through to community television production, with recent work in sports broadcasting at the Australian Open and producing and hosting a pilot for a panel discussion show looking at issues through a lens of intersectional feminism.
             </p>
         </div>
