@@ -151,11 +151,11 @@ a {
 
 .header-content {
     display: grid;
-    grid-template-columns: 300px 480px 280px;
-    gap: 2.5rem;
+    grid-template-columns: 240px minmax(0, 1fr) 200px;
+    gap: 2rem;
     max-width: 1140px;
     margin: 0 auto var(--space-xl) auto;
-    align-items: start;
+    align-items: center;
     padding: 0 var(--space-lg);
 }
 
@@ -1404,7 +1404,10 @@ a {
     }
 }
 
-/* Print styles */
+/* ===================================
+   PRINT STYLES
+   =================================== */
+
 @media print {
     body {
         background: white;
@@ -1432,355 +1435,185 @@ a {
     .contact-item:hover {
         padding-left: 0;
     }
-   DESIGN IMPROVEMENTS - CSS UPDATES
-   Add this to the bottom of your CSS file
+}
+
+/* ===================================
+   HEADER - SPECIALISATION TAGLINE
+   Eyebrow line below the JOURNALIST title
    =================================== */
 
-/* 1. VISUAL IMBALANCE FIX - Option B: Three Column Layout */
-/* Header-content defined at line 152 - do not duplicate */
-
-.photo-section {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.contact-section {
-    grid-column: 2;
-    grid-row: 1;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-    max-width: 480px;
-}
-
-/* New: Contact Details Column */
-.contact-details-column {
-    grid-column: 3;
-    grid-row: 1;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-    padding: var(--space-lg);
-    background: rgba(155, 165, 144, 0.08);
-    border-radius: 8px;
-    border: 1px solid var(--color-border);
-    align-self: start;
-    position: sticky;
-    top: 2rem;
-}
-
-.contact-details-column h3 {
-    font-family: var(--font-secondary);
-    font-size: 0.875rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-slate);
-    font-weight: 600;
-    margin-bottom: var(--space-sm);
-}
-
-.contact-info-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-    padding: var(--space-sm) 0;
-    border-bottom: 1px solid var(--color-border);
-}
-
-.contact-info-item:last-of-type {
-    border-bottom: none;
-}
-
-.contact-info-label {
-    font-family: var(--font-secondary);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-slate);
-    font-weight: 600;
-}
-
-.contact-info-value {
-    font-size: 0.95rem;
-    color: var(--color-charcoal);
-    word-break: break-word;
-}
-
-.contact-info-value a {
-    color: var(--color-charcoal);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contact-info-value a:hover {
-    color: var(--color-accent);
-}
-
-/* 2. ICON BUTTON ACCESSIBILITY - Option B: Text with small icons */
-.linkedin-button {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: 0.625rem 1.25rem;
-    background: transparent;
-    color: var(--color-charcoal);
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
-    font-family: var(--font-secondary);
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.linkedin-button:hover {
-    background: #0077B5;
-    color: white;
-    border-color: #0077B5;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 119, 181, 0.2);
-}
-
-.linkedin-button svg {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-}
-
-.linkedin-button span {
-    position: static;
-    opacity: 1;
-    pointer-events: auto;
-    background: none;
-    color: inherit;
-    padding: 0;
-    border-radius: 0;
-    font-size: inherit;
-    font-family: inherit;
-    white-space: nowrap;
-    transform: none;
-}
-
-.linkedin-button span::before {
-    display: none;
-}
-
-.contact-form-toggle {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: 0.625rem 1.25rem;
-    background: transparent;
-    color: var(--color-charcoal);
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
-    font-family: var(--font-secondary);
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.contact-form-toggle:hover {
-    background: var(--color-accent);
-    color: white;
-    border-color: var(--color-accent);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(139, 115, 85, 0.2);
-}
-
-.contact-form-toggle svg {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
-}
-
-.contact-form-toggle span {
-    position: static;
-    opacity: 1;
-    pointer-events: auto;
-    background: none;
-    color: inherit;
-    padding: 0;
-    border-radius: 0;
-    font-size: inherit;
-    font-family: inherit;
-    white-space: nowrap;
-    transform: none;
-}
-
-.contact-form-toggle span::before {
-    display: none;
-}
-
-/* 4. TYPOGRAPHY - Option B: Add tagline under JOURNALIST */
 .specialisation-tagline {
     font-family: var(--font-secondary);
     font-size: 0.875rem;
     color: var(--color-slate);
     line-height: 1.6;
     margin-top: 0.25rem;
+    margin-bottom: var(--space-md);
     font-weight: 400;
+    letter-spacing: 0.02em;
 }
 
-/* 5. BUTTON STYLING - Option A: Outlined style (already implemented above in #2) */
+/* ===================================
+   HEADER - CONTACT BUTTONS ROW
+   =================================== */
 
-/* 6. PHOTO TREATMENT - Option A: Subtle shadow */
-.photo-frame {
-    background: white;
-    border-radius: var(--border-radius);
+.contact-buttons-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+/* ===================================
+   HEADER - CONTACT DETAILS COLUMN (right side)
+   Restores label/value vertical structure and dials down the "Contact"
+   heading so it no longer competes visually with the name.
+   =================================== */
+
+.contact-details-column h3 {
+    font-family: var(--font-secondary);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-slate);
+    font-weight: 600;
+    margin: 0 0 var(--space-md) 0;
+}
+
+.contact-info-item {
+    display: block;
+    margin-bottom: var(--space-md);
+}
+
+.contact-info-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-info-label {
+    display: block;
+    font-family: var(--font-secondary);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-slate);
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+    opacity: 0.75;
+}
+
+.contact-info-value {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--color-charcoal);
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.contact-info-value a {
+    color: var(--color-charcoal);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-info-value a:hover {
+    border-bottom-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+/* ===================================
+   BIO EXTENDED
+   Full-width continuation of the bio that sits between the header grid
+   and the first content section. Roman weight to differentiate from the
+   italic lead paragraph above.
+   =================================== */
+
+.bio-extended {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: var(--space-md) var(--space-lg) 0;
+}
+
+.bio-extended-paragraph {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    line-height: 1.55;
+    color: var(--color-charcoal);
+    margin: 0;
+}
+
+/* ===================================
+   BROADCAST SECTION
+   Three video embeds in a 2+1 layout: featured video full-width on top,
+   two below side by side. Collapses to single column on narrow screens.
+   =================================== */
+
+.broadcast-section {
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border);
+}
+
+.broadcast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-lg) auto 0;
+    max-width: 1100px;
+}
+
+.broadcast-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.broadcast-card-featured {
+    grid-column: 1 / -1;
+}
+
+.video-embed-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(43, 43, 43, 0.12);
-    transition: all 0.3s ease;
+    background: #000;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+}
+
+.broadcast-card:hover .video-embed-wrapper {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.video-embed-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border: none;
 }
 
-.photo-frame:hover {
-    box-shadow: 0 12px 32px rgba(43, 43, 43, 0.16);
-    transform: translateY(-2px);
+.broadcast-card .card-content {
+    padding: var(--space-md) 0 0 0;
 }
 
-/* 8. SPECIALISATION - Tagline already styled above in #4 */
-
-/* 10. MOBILE OPTIMISATIONS */
-@media (max-width: 968px) {
-    /* Stack to two columns on tablet */
-    .header-content {
-        grid-template-columns: 300px 1fr;
-        gap: var(--space-lg);
-    }
-    
-    .contact-details-column {
-        grid-column: 1 / -1;
-        grid-row: 2;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Single column on mobile */
-    .header-content {
-        grid-template-columns: 1fr;
-        gap: var(--space-lg);
-    }
-    
-    .photo-section {
-        max-width: 300px;
-        margin: 0 auto;
-    }
-    
-    .contact-details-column {
-        grid-column: 1;
-        grid-row: auto;
-    }
-    
-    /* Stack buttons vertically on small screens if needed */
-    .contact-buttons-row {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .linkedin-button,
-    .contact-form-toggle {
-        width: 100%;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-details-column {
-        padding: var(--space-md);
-    }
-    
-    .specialisation-tagline {
-        font-size: 0.8rem;
-    }
-}
-
-/* Ensure buttons are always touch-friendly */
-.linkedin-button,
-.contact-form-toggle {
-    min-height: 44px;
-    min-width: 44px;
-}
 /* ===================================
-   QUICK FIX - Add to bottom of CSS
+   RESPONSIVE - BIO EXTENDED & BROADCAST
    =================================== */
 
-/* Make contact sidebar sticky and better positioned */
-.contact-details-column {
-    position: sticky;
-    top: 2rem;
-    align-self: start;
-    max-height: calc(100vh - 4rem);
-    overflow-y: auto;
-}
-
-/* Better spacing - already defined at line 152 */
-
-/* Ensure content section doesn't get too wide */
-.contact-section {
-    max-width: 600px;
-}
-
-/* Better button styling */
-.contact-buttons-row {
-    display: flex;
-    gap: 0.75rem;
-    margin: 1.5rem 0;
-}
-
-.linkedin-button,
-.contact-form-toggle {
-    flex: 1;
-    max-width: 200px;
-}
-
-/* Hide any duplicate contact sections that might appear at bottom */
-.portfolio-footer ~ section,
-section:last-of-type:has(h2:contains("Contact")) {
-    display: none;
-}
-
-/* Better mobile stacking */
-@media (max-width: 968px) {
-    .header-content {
-        grid-template-columns: 280px 1fr !important;
-        max-width: 100%;
-    }
-    
-    .contact-details-column {
-        grid-column: 1 / -1;
-        grid-row: 2;
-        position: relative;
-        top: 0;
-        max-height: none;
-    }
-    
-    .contact-section {
-        max-width: 100%;
-    }
-}
-
 @media (max-width: 768px) {
-    .header-content {
-        grid-template-columns: 1fr !important;
+    .bio-extended {
+        padding-top: var(--space-md);
     }
-    
-    .linkedin-button,
-    .contact-form-toggle {
-        max-width: 100%;
-    }
-}
 
-/* Final polish - better responsive behavior */
-@media (max-width: 1200px) {
-    .header-content {
-        grid-template-columns: 280px 1fr 260px;
-        gap: 2rem;
-        max-width: 100%;
+    .bio-extended-paragraph {
+        font-size: 1.125rem;
     }
-    
-    .contact-section {
-        max-width: 100%;
+
+    .broadcast-grid {
+        margin-top: var(--space-md);
     }
 }
