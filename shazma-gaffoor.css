@@ -151,11 +151,11 @@ a {
 
 .header-content {
     display: grid;
-    grid-template-columns: 240px minmax(0, 1fr) 200px;
-    gap: 2rem;
+    grid-template-columns: 300px 480px 280px;
+    gap: 2.5rem;
     max-width: 1140px;
     margin: 0 auto var(--space-xl) auto;
-    align-items: center;
+    align-items: start;
     padding: 0 var(--space-lg);
 }
 
