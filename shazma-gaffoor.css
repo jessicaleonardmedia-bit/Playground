@@ -28,7 +28,7 @@
     --space-2xl: 6rem;
     
     /* Layout */
-    --max-width: 1000px;
+    --max-width: 1240px;
     --border-radius: 2px;
 }
 
@@ -156,7 +156,6 @@ a {
     max-width: 1140px;
     margin: 0 auto var(--space-xl) auto;
     align-items: start;
-    padding: 0 var(--space-lg);
 }
 
 /* Photo Section */
